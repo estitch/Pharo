@@ -12,6 +12,9 @@ Class {
 	#instVars : [
 		'count'
 	],
+	#classInstVars : [
+		'count'
+	],
 	#category : #MyCounter
 }
 
@@ -23,4 +26,27 @@ Counter >> count [
 { #category : #accessing }
 Counter >> count: anInteger [ 
 	count := anInteger
+]
+
+{ #category : #API }
+Counter >> decrement [ 
+	"comment stating purpose of instance-side method"
+	"scope: class-variables  &  instance-variables"	
+	count := count - 1
+]
+
+{ #category : #accessing }
+Counter >> increment [
+	"comment stating purpose of instance-side method"
+	"scope: class-variables  &  instance-variables"	
+	count := count + 1
+]
+
+{ #category : #initialization }
+Counter >> initialize [
+	"comment stating purpose of instance-side method"
+	"scope: class-variables  &  instance-variables"	
+	| c |		
+	c := Counter new.
+	c count: 0  
 ]
